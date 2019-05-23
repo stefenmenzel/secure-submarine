@@ -10,7 +10,14 @@ class AllUserList extends Component{
     render(){
         {this.props.allUsers.length > 0 && console.log('this.props.allUsers:', this.props.allUsers)};
         return(
-            <div>all user list here</div>
+            <div>
+                <h2>All user accounts</h2>
+                <ul>
+                    {this.props.allUsers.map((user) => {
+                        return <li key={user.id}>{user.username}</li>;
+                })}
+                </ul>
+            </div>
         )
     }
 }

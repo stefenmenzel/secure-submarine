@@ -14,7 +14,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 router.get('/all-users', rejectUnauthenticated, (req, res) => {
   let sqlQuery = `
-    SELECT * FROM "user";
+    SELECT "id", "username" FROM "user";
   `
   pool.query(sqlQuery)
   .then((result) => {
